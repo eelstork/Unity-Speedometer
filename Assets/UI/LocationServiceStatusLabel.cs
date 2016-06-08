@@ -8,7 +8,7 @@ public class LocationServiceStatusLabel : MonoBehaviour {
 		
 		Text text = GetComponent<Text> ();
 		LocationServiceStatus status = Input.location.status;
-		text.text = "Location Services status: "+status;
+		text.text = "Location services: "+status;
 
 	}
 

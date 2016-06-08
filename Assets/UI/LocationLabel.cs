@@ -9,12 +9,10 @@ public class LocationLabel : MonoBehaviour {
 
 		LocationInfo loc = Input.location.lastData;
 
-		int speed = (int)(FindObjectOfType<Speedometer> ().speedInKmPerHour);
-
 		Text text = GetComponent<Text> ();
 
 		if (Input.location.status != LocationServiceStatus.Running) {
-			text.text="-";
+			text.text="Location unknown";
 			return;
 		}
 
