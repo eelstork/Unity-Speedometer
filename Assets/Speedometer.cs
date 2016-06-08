@@ -10,21 +10,22 @@ public class Speedometer : MonoBehaviour{
 
 	public enum Heuristic{ TWO_POINT, NO_CONFIDENCE, TIMEOUT } 
 
-	[Header("Parameters")]
+	[Header("Parameters")] // -------------------------------------
 
-	// Max number of location samples to buffer
+	[Tooltip("Max number of locations to buffer")]
 	public int recordSize = 10;
-	// Picking earlier samples increases speed accuracy, but
-	// reduces responsiveness.
-	// Try to raise this (up to ~0.9) to increase accuracy.
-	// Lower it (down to 0.2?) to increase responsiveness.
-	float minConfidence = 0.65f;
+
+	// Two-point method may pick earlier samples to 
+	// increase accuracy, at the expensive of responsiveness
+	[Tooltip("Recommended values from 0.25 (more responsive) to 0.75 (more accurate)")]
+	float minConfidence = 0.35f;
 
 	// Since the location tends to not update when not moving,
 	// after a timeout (in seconds) we assume that speed is zero
-	int timeout = 5;
+	[Tooltip("After timeout, if no location updates assume immobility")]
+	int timeout = 10;
 
-	[Header("Output")]
+	[Header("Output (do not edit)")] // ----------------------------
 
 	// The method used to evaluate speed
 	public Heuristic heuristic = Heuristic.TWO_POINT;
