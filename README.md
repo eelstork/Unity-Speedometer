@@ -2,6 +2,10 @@
 
 A simple project showing how to use location services to measure speed. The sample app reports helpful data (location coordinates, accuracy, sampling timeframe)
 
+## Android 12 and Unity 2021 LTS compatible issue
+
+A bug came with some changes to Android 12 from Google in February which weren't compatible with Unity 2021 LTS location service backend and Unity didn't bother to fix it in 2021 and instead fixed it in Unity 2022. The bug makes Android phones not update it's location for several kilometers so make sure to use Unity 2022 when running this project on an Android 12 phone.
+
 ## Accuracy
 
 Deriving speed from location data works better at higher speed (say, over 20 km/h).
